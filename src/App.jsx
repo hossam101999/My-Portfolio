@@ -90,7 +90,7 @@ function App() {
               </div>
               <div>
                 <p className="mt-4 text-gray-400">
-                  I am a Front-End Developer specializing in React JS, with
+                  I am a Front-End Developer specializing in React JS and angular, with
                   strong skills in HTML, CSS, JavaScript, and modern React
                   tools. I also have backend experience in Node.js, Express, and
                   MongoDB. With excellent time management and a collaborative
