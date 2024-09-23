@@ -3,6 +3,8 @@ import ExamGate from "./assets/Exam Gate.png";
 import Ecommerce from "./assets/Ecommerce.png";
 import Bondi from "./assets/Bondi.png";
 import Elzero from "./assets/Elzero.png";
+import Elzeroo from "./assets/blog-website-development-data-network-concept_53876-125055.jpg";
+
 import Redux from "./assets/redux-svgrepo-com.svg";
 import TypeScript from "./assets/typescript-icon-svgrepo-com.svg";
 import TailwindCSS from "./assets/tailwind-css-svgrepo-com.svg";
@@ -241,7 +243,7 @@ function App() {
               </div>
             </div>
             <div className="border border-gray-500 rounded-md p-5 flex-1 w-50 p-20">
-              <img src={Elzero} className="w-full h-[30vh]" />
+              <img src={Elzeroo} className="w-full h-[30vh]" />
               <h3 className="text-2xl font-semibold mt-8">blog page</h3>
               <p className="text-gray-400 text-sm mt-2">
                 <i>Exam plog page Web Responsive by react </i>
