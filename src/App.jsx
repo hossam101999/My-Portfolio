@@ -11,7 +11,6 @@ import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { useEffect, useState } from "react";
 import { EmailForm } from "./EmailForm.jsx";
-import kaspe from "../../Portfolio - Copy/src/assets/Kaspe.png";
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
@@ -130,7 +129,6 @@ function App() {
             </div>
           </div>
         </section>
-        {/* Projects section */}
         <section id="projects">
           <div className="container m-auto px-4 sm:py-12">
             <h2 className="text-2xl font-semibold">Projects</h2>
@@ -243,7 +241,7 @@ function App() {
               </div>
             </div>
             <div className="border border-gray-500 rounded-md p-5 flex-1 w-50 p-20">
-              <img src={kaspe} className="w-full h-[30vh]" />
+              <img src={Elzero} className="w-full h-[30vh]" />
               <h3 className="text-2xl font-semibold mt-8">blog page</h3>
               <p className="text-gray-400 text-sm mt-2">
                 <i>Exam plog page Web Responsive by react </i>
