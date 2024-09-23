@@ -11,7 +11,7 @@ import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { useEffect, useState } from "react";
 import { EmailForm } from "./EmailForm.jsx";
-import kaspe from "./assets/kaspe.png";
+import kaspe from "../../Portfolio - Copy/src/assets/Kaspe.png";
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
