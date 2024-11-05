@@ -179,7 +179,7 @@ function App() {
               <ProjectCard
                 image={menha}
                 title="Full E-commerce"
-                description="In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
+                description="So In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
                 livePreviewLink="menha-4lrf.vercel.app"
                 githubLink="https://github.com/hossam101999/menha-"
               />
