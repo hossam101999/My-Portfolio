@@ -13,7 +13,7 @@ import myPhoto from "./assets/myPhoto (2).png";
 import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { EmailForm } from "./EmailForm.jsx";
-import menha from "./assets/Capture.PNG"
+import captureImage from './assets/Capture.PNG';
 const TECH_SKILLS = [
   { icon: "fa-html5", name: "HTML", percentage: 85 },
   { icon: "fa-css3", name: "CSS", percentage: 85 },
@@ -177,10 +177,12 @@ function App() {
                 githubLink="https://github.com/hossam101999/exam_.git"
               />
               <ProjectCard
-                image={menha}
+                image={captureImage}
                 title="Full E-commerce"
                 description="So In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
-                livePreviewLink="menha-4lrf.vercel.app"
+                livePreviewLink="https://menha-4lrf.vercel.app/dashboard"
+
+              
                 githubLink="https://github.com/hossam101999/menha-"
               />
               <ProjectCard
