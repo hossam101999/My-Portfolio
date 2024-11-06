@@ -13,7 +13,7 @@ import myPhoto from "./assets/myPhoto (2).png";
 import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { EmailForm } from "./EmailForm.jsx";
-import captureImage from './assets/Capture.PNG';
+import captureImage from './assets/emage.jpg';
 const TECH_SKILLS = [
   { icon: "fa-html5", name: "HTML", percentage: 85 },
   { icon: "fa-css3", name: "CSS", percentage: 85 },
