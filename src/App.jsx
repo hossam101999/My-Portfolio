@@ -14,6 +14,7 @@ import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { EmailForm } from "./EmailForm.jsx";
 import captureImage from './assets/emage.jpg';
+import AdditionalSkillsSection from "./AdditionalSkillsSection.jsx";
 const TECH_SKILLS = [
   { icon: "fa-html5", name: "HTML", percentage: 85 },
   { icon: "fa-css3", name: "CSS", percentage: 85 },
@@ -27,14 +28,7 @@ const TECH_SKILLS = [
   { icon: "fa-git-alt", name: "Git", percentage: 70 },
 ];
 
-const ADDITIONAL_SKILLS = [
-  "GitHub",
-  "Responsive Design",
-  "RESTful APIs",
-  "Quick learning",
-  "B1 English",
-  "Teamwork",
-];
+
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
@@ -157,11 +151,13 @@ function App() {
             <h2 className="text-2xl font-semibold">Projects</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-11">
               <ProjectCard
-                image={Ecommerce}
-                title="E-commerce"
-                description="Responsive Angular App with APIs dummy"
-                livePreviewLink="https://angular-e-com-c48r.vercel.app"
-                githubLink="https://github.com/hossam101999/angular-E-com.git"
+                image={captureImage}
+                title="the Menha "
+                description="So In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
+                livePreviewLink="https://menha-4lrf.vercel.app/dashboard"
+
+              
+                githubLink="https://github.com/hossam101999/menha-"
               />
                 <ProjectCard
                  image={Elzero}
@@ -171,19 +167,17 @@ function App() {
                  githubLink="https://github.com/hossam101999/E-comerce"
                />
               <ProjectCard
+                image={Ecommerce}
+                title="E-commerce"
+                description="Responsive Angular App with APIs dummy"
+                livePreviewLink="https://angular-e-com-c48r.vercel.app"
+                githubLink="https://github.com/hossam101999/angular-E-com.git"
+              />
+              <ProjectCard
                 image={ExamGate}
                 title="Exam Gate"
                 description="Exam Automated an Offers Application Web Responsive"
                 githubLink="https://github.com/hossam101999/exam_.git"
-              />
-              <ProjectCard
-                image={captureImage}
-                title="Full E-commerce"
-                description="So In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
-                livePreviewLink="https://menha-4lrf.vercel.app/dashboard"
-
-              
-                githubLink="https://github.com/hossam101999/menha-"
               />
               <ProjectCard
                 image={Bondi}
@@ -231,14 +225,8 @@ function App() {
             <h2 className="text-2xl font-semibold">
               Additional Technologies and Skills
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-28 mt-12 w-[80%]">
-              {ADDITIONAL_SKILLS.map((skill) => (
-                <div key={skill}>
-                  <p className="font-bold before:w-4 before:h-4 before:bg-gradient-to-t before:from-blue-500 before:to-cyan-500 before:block before:rounded-full before:mt-1 before:-left-6 before:absolute relative left-5 animate-fadeInLeft">
-                    {skill}
-                  </p>
-                </div>
-              ))}
+            <div >
+            <AdditionalSkillsSection/>
             </div>
           </div>
         </section>
