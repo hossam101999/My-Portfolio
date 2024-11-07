@@ -5,32 +5,15 @@ import Ecommerce from "./assets/Ecommerce.png";
 import Bondi from "./assets/Bondi.png";
 import Elzero from "./assets/Elzero.png";
 import Elzeroo from "./assets/blog-website-development-data-network-concept_53876-125055.jpg";
-
-import Redux from "./assets/redux-svgrepo-com.svg";
-import TypeScript from "./assets/typescript-icon-svgrepo-com.svg";
-import TailwindCSS from "./assets/tailwind-css-svgrepo-com.svg";
+import captureImage from "./assets/emage.jpg";
 import myPhoto from "./assets/myPhoto (2).png";
 import ArrowDown from "./assets/arrow-down.svg";
 import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
 import { EmailForm } from "./EmailForm.jsx";
-import captureImage from './assets/emage.jpg';
+import TechnologiesSection from "./TechnologiesSection.jsx";
 import AdditionalSkillsSection from "./AdditionalSkillsSection.jsx";
-const TECH_SKILLS = [
-  { icon: "fa-html5", name: "HTML", percentage: 85 },
-  { icon: "fa-css3", name: "CSS", percentage: 85 },
-  { icon: "fa-angular", name: "Angular", percentage: 85 },
-  { icon: "fa-bootstrap", name: "Bootstrap 5", percentage: 85 },
-  { icon: "tailwind-css-svgrepo-com", name: "Tailwind CSS", percentage: 75 },
-  { icon: "fa-js", name: "JavaScript", percentage: 80 },
-  { icon: "typescript-icon-svgrepo-com", name: "TypeScript", percentage: 70 },
-  { icon: "fa-react", name: "React Js", percentage: 75 },
-  { icon: "redux-svgrepo-com", name: "Redux, Redux Toolkit", percentage: 70 },
-  { icon: "fa-git-alt", name: "Git", percentage: 70 },
-];
 
-
-
-function App() {
+const App = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -66,6 +49,7 @@ function App() {
 
   return (
     <div className="max-w-4xl m-auto relative overflow-hidden">
+      {/* Header */}
       <header
         className={`${
           scrolling ? "border-b border-gray-900" : ""
@@ -96,7 +80,9 @@ function App() {
         </div>
       </header>
 
+      {/* Main Content */}
       <main className="relative mt-28">
+        {/* Hero Section */}
         <section>
           <div className="container m-auto px-4 pt-12 pb-12 sm:pt-20 flex flex-col sm:flex-row gap-6 text-center sm:text-left">
             <div className="w-full md:max-w-[60%] animate-fadeInLeft">
@@ -108,11 +94,13 @@ function App() {
               </div>
               <div>
                 <p className="mt-4 text-gray-400 animate-fadeInLeft">
-                  I am a <span className="text-white"> Frontend Developer </span>  specializing in React JS and Angular,
-                  with strong skills in HTML, CSS, JavaScript, and modern React
-                  tools. I also<span className="text-white">Backend Developer </span>  experience in Node.js, Express, and
-                  MongoDB. With excellent time management and a collaborative
-                  spirit,
+                  I am a{" "}
+                  <span className="text-white"> Frontend Developer </span> specializing
+                  in React JS and Angular, with strong skills in HTML, CSS,
+                  JavaScript, and modern React tools. I also{" "}
+                  <span className="text-white">Backend Developer </span> experience in
+                  Node.js, Express, and MongoDB. With excellent time management
+                  and a collaborative spirit,
                 </p>
                 <a href={myCv} download="Hossam-Salah-Khatab-CV.pdf" target="_blank">
                   <button className="px-8 shadow-gray-500 shadow-md py-5 mt-5 bg-gradient-to-t from-blue-500 rounded-full to-cyan-500 hover:from-blue-700 hover:to-cyan-700 text-white animate-bounceInUp">
@@ -146,6 +134,7 @@ function App() {
           </div>
         </section>
 
+        {/* Projects Section */}
         <section id="projects" className="animate-fadeInUp">
           <div className="container m-auto px-4 sm:py-12">
             <h2 className="text-2xl font-semibold">Projects</h2>
@@ -155,17 +144,15 @@ function App() {
                 title="the Menha "
                 description="So In this project, my team and I developed the Menha platform, a website designed to showcase scholarships, helping users easily find opportunities that suit their qualifications and preferences."
                 livePreviewLink="https://menha-4lrf.vercel.app/dashboard"
-
-              
                 githubLink="https://github.com/hossam101999/menha-"
               />
-                <ProjectCard
-                 image={Elzero}
-                 title="Full E-commerce"
-                 description="In this project, my team and I built a full e-commerce using Angular and Node"
-                 livePreviewLink="https://itians-ecommerce-team.vercel.app/"
-                 githubLink="https://github.com/hossam101999/E-comerce"
-               />
+              <ProjectCard
+                image={Elzero}
+                title="Full E-commerce"
+                description="In this project, my team and I built a full e-commerce using Angular and Node"
+                livePreviewLink="https://itians-ecommerce-team.vercel.app/"
+                githubLink="https://github.com/hossam101999/E-comerce"
+              />
               <ProjectCard
                 image={Ecommerce}
                 title="E-commerce"
@@ -196,44 +183,26 @@ function App() {
           </div>
         </section>
 
-        <section className="py-10 animate-fadeInUp" id="technologies">
-          <div className="container m-auto px-4">
-            <h2 className="text-2xl font-semibold">Technologies</h2>
-            <div className="mt-14">
-              {TECH_SKILLS.map((skill) => (
-                <div key={skill.name} className="mt-8">
-                  <div className="flex justify-between items-center">
-                    <h2 className="font-semibold animate-fadeInLeft">
-                      <i
-                        className={`fa-brands ${skill.icon} me-3 text-[#2965f1] text-2xl`}
-                      ></i>
-                      {skill.name}
-                    </h2>
-                    <p className="text-gray-500 animate-fadeInRight">
-                      {skill.percentage}%
-                    </p>
-                  </div>
-                  <span className="w-[85%] h-2 mt-2 bg-gradient-to-t from-blue-500 to-cyan-500 block rounded-md animate-expandWidth" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Technologies Section */}
+        <TechnologiesSection />
 
+        {/* Additional Skills Section */}
         <section className="animate-fadeInUp">
           <div className="container m-auto px-4 py-14">
             <h2 className="text-2xl font-semibold">
               Additional Technologies and Skills
             </h2>
-            <div >
-            <AdditionalSkillsSection/>
+            <div>
+              <AdditionalSkillsSection />
             </div>
           </div>
         </section>
 
+        {/* Contact Form */}
         <EmailForm />
       </main>
 
+      {/* Footer */}
       <footer>
         <div className="container m-auto flex justify-evenly px-4 py-6 align-middle animate-fadeInUp">
           <div>
@@ -262,6 +231,7 @@ function App() {
         </div>
       </footer>
 
+      {/* Scroll-to-top Button */}
       {scrolling && (
         <button
           className="fixed block right-[-20px] sm:right-8 bottom-0 w-24 animate-bounceInUp"
@@ -274,8 +244,9 @@ function App() {
       )}
     </div>
   );
-}
+};
 
+// Project Card Component
 const ProjectCard = ({
   image,
   title,
@@ -284,7 +255,7 @@ const ProjectCard = ({
   githubLink,
 }) => {
   return (
-    <div className="border border-gray-500 rounded-md p-5 flex-1 animate-fadeInUp">
+    <div className="border border-gray-500 rounded-md p-5 flex-1 animate-fadeInUp ">
       <img src={image} className="w-full h-[30vh] object-cover" />
       <h3 className="text-2xl font-semibold mt-8">{title}</h3>
       <p className="text-gray-400 text-sm mt-2">
