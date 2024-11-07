@@ -1,0 +1,413 @@
+// import React, { useEffect, useState } from "react";
+// import "./App.css";
+// import ExamGate from "./assets/Exam Gate.png";
+// import Ecommerce from "./assets/Ecommerce.png";
+// import Bondi from "./assets/Bondi.png";
+// import Elzero from "./assets/Elzero.png";
+// import Elzeroo from "./assets/blog-website-development-data-network-concept_53876-125055.jpg";
+// import captureImage from "./assets/emage.jpg";
+// import myPhoto from "./assets/myPhoto (2).png";
+// import ArrowDown from "./assets/arrow-down.svg";
+// import myCv from "./PDFs/Hossam-Salah-Khatab-CV.pdf";
+// import { EmailForm } from "./EmailForm.jsx";
+// import TechnologiesSection from "./TechnologiesSection.jsx";
+// import AdditionalSkillsSection from "./AdditionalSkillsSection.jsx";
+
+// // Add this to your App.css
+// const styles = `
+// @keyframes float {
+//   0%, 100% { transform: translateY(0); }
+//   50% { transform: translateY(-20px); }
+// }
+
+// @keyframes fadeInUp {
+//   from {
+//     opacity: 0;
+//     transform: translateY(20px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes slideInLeft {
+//   from {
+//     opacity: 0;
+//     transform: translateX(-100px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+// @keyframes glow {
+//   0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+//   50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+// }
+
+// .animate-float {
+//   animation: float 6s ease-in-out infinite;
+// }
+
+// .animate-fade-in-up {
+//   animation: fadeInUp 1s ease-out forwards;
+// }
+
+// .animate-slide-in-left {
+//   animation: slideInLeft 1s ease-out forwards;
+// }
+
+// .animate-glow {
+//   animation: glow 3s ease-in-out infinite;
+// }
+
+// .typing-effect::after {
+//   content: '|';
+//   animation: blink 1s step-end infinite;
+// }
+
+// @keyframes blink {
+//   from, to { opacity: 1; }
+//   50% { opacity: 0; }
+// }
+
+// .gradient-border {
+//   position: relative;
+// }
+
+// .gradient-border::before {
+//   content: '';
+//   position: absolute;
+//   inset: -2px;
+//   background: linear-gradient(45deg, #3b82f6, #06b6d4);
+//   border-radius: inherit;
+//   z-index: -1;
+//   transition: opacity 0.3s ease;
+//   opacity: 0;
+// }
+
+// .gradient-border:hover::before {
+//   opacity: 1;
+// }
+
+// .card-hover {
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+// }
+
+// .card-hover:hover {
+//   transform: translateY(-10px);
+//   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+// }
+// `;
+
+// const App = () => {
+//   const [scrolling, setScrolling] = useState(false);
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isLoading, setIsLoading] = useState(true);
+//   const [typedText, setTypedText] = useState("");
+//   const fullText = "Full Stack Developer";
+
+//   useEffect(() => {
+//     let currentText = "";
+//     let currentIndex = 0;
+
+//     const typeText = () => {
+//       if (currentIndex < fullText.length) {
+//         currentText += fullText[currentIndex];
+//         setTypedText(currentText);
+//         currentIndex++;
+//         setTimeout(typeText, 100);
+//       }
+//     };
+
+//     setTimeout(typeText, 1000);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleScroll = () => setScrolling(window.pageYOffset > 100);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setIsLoading(false), 1500);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   if (isLoading) {
+//     return (
+//       <div className="flex items-center justify-center h-screen bg-gray-950">
+//         <div className="relative w-20 h-20">
+//           <div className="absolute inset-0 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+//           <div className="absolute inset-2 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin-slow" />
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="bg-gray-950 text-white min-h-screen">
+//       {/* Inject custom styles */}
+//       <style>{styles}</style>
+
+//       {/* Header - Fixed position with blur effect */}
+//       <header className="fixed w-full top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+//         <nav className="max-w-6xl mx-auto px-6 h-20">
+//           <div className="flex items-center justify-between h-full">
+//             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+//               Hossam Salah
+//             </h1>
+            
+//             <button 
+//               className="lg:hidden text-3xl hover:text-blue-500 transition-colors"
+//               onClick={() => setIsMenuOpen(!isMenuOpen)}
+//             >
+//               {isMenuOpen ? "×" : "☰"}
+//             </button>
+
+//             <nav className="hidden lg:flex items-center space-x-8">
+//               {["home", "projects", "technologies", "connectMe"].map((item) => (
+//                 <a
+//                   key={item}
+//                   href={`#${item}`}
+//                   className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
+//                 >
+//                   {item.charAt(0).toUpperCase() + item.slice(1)}
+//                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
+//                 </a>
+//               ))}
+//             </nav>
+//           </div>
+
+//           {/* Animated Mobile Menu */}
+//           <div
+//             className={`lg:hidden overflow-hidden transition-all duration-300 ${
+//               isMenuOpen ? "max-h-64" : "max-h-0"
+//             }`}
+//           >
+//             <div className="py-4 space-y-4">
+//               {["home", "projects", "technologies", "connectMe"].map((item, index) => (
+//                 <a
+//                   key={item}
+//                   href={`#${item}`}
+//                   className="block text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-2 transform"
+//                   style={{ animationDelay: `${index * 0.1}s` }}
+//                   onClick={() => setIsMenuOpen(false)}
+//                 >
+//                   {item.charAt(0).toUpperCase() + item.slice(1)}
+//                 </a>
+//               ))}
+//             </div>
+//           </div>
+//         </nav>
+//       </header>
+
+//       {/* Main Content */}
+//       <main className="pt-20">
+//         {/* Hero Section with Animations */}
+//         <section id="home" className="min-h-screen flex items-center">
+//           <div className="container mx-auto px-6 py-20">
+//             <div className="grid lg:grid-cols-2 gap-12 items-center">
+//               <div className="space-y-6 animate-slide-in-left">
+//                 <h2 className="text-5xl font-bold leading-tight">
+//                   Hello, I'm{" "}
+//                   <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+//                     Hossam Salah
+//                   </span>
+//                 </h2>
+//                 <h3 className="text-3xl font-bold text-gray-300 typing-effect">
+//                   {typedText}
+//                 </h3>
+//                 <p className="text-gray-400 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+//                   I am a <span className="text-white">Frontend Developer</span> specializing
+//                   in React JS and Angular, with strong skills in modern web development.
+//                   I also have <span className="text-white">Backend Developer</span> experience
+//                   with Node.js, Express, and MongoDB.
+//                 </p>
+//                 <div className="flex flex-wrap gap-6 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
+//                   <a
+//                     href={myCv}
+//                     download="Hossam-Salah-Khatab-CV.pdf"
+//                     className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg overflow-hidden hover:scale-105 transition-transform"
+//                   >
+//                     <span className="relative z-10">Download Resume</span>
+//                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+//                   </a>
+//                   <div className="flex gap-6">
+//                     {[
+//                       { icon: "linkedin", url: "https://www.linkedin.com/in/hossam-salah-1ab717238/" },
+//                       { icon: "github", url: "https://github.com/hossam101999" }
+//                     ].map((social, index) => (
+//                       <a
+//                         key={social.icon}
+//                         href={social.url}
+//                         className="text-3xl text-gray-400 hover:text-white transition-all hover:scale-125"
+//                         target="_blank"
+//                         style={{ animationDelay: `${0.9 + index * 0.1}s` }}
+//                       >
+//                         <i className={`fa-brands fa-${social.icon}`}></i>
+//                       </a>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+//               <div className="relative animate-float">
+//                 <div className="relative z-10 rounded-full overflow-hidden animate-glow">
+//                   <img
+//                     src={myPhoto}
+//                     alt="Hossam Salah"
+//                     className="w-full h-full object-cover transform transition-transform hover:scale-105"
+//                   />
+//                 </div>
+//                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 blur-3xl opacity-20 animate-pulse" />
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* Projects Section with Animations */}
+//         <section id="projects" className="py-20">
+//           <div className="container mx-auto px-6">
+//             <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+//               Featured Projects
+//             </h2>
+//             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+//               {[
+//                 {
+//                   image: captureImage,
+//                   title: "The Menha",
+//                   description: "Scholarship platform helping users find opportunities.",
+//                   preview: "https://menha-4lrf.vercel.app/dashboard",
+//                   github: "https://github.com/hossam101999/menha-"
+//                 },
+//                 {
+//                   image: Elzero,
+//                   title: "Full E-commerce",
+//                   description: "Complete e-commerce solution with Angular and Node",
+//                   preview: "https://itians-ecommerce-team.vercel.app/",
+//                   github: "https://github.com/hossam101999/E-comerce"
+//                 },
+//                 // ... other projects
+//               ].map((project, index) => (
+//                 <div 
+//                   key={index}
+//                   className="card-hover bg-gray-900/50 rounded-xl overflow-hidden"
+//                   style={{ animationDelay: `${index * 0.2}s` }}
+//                 >
+//                   <div className="relative group">
+//                     <img
+//                       src={project.image}
+//                       alt={project.title}
+//                       className="w-full aspect-video object-cover transform transition-transform group-hover:scale-110"
+//                     />
+//                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+//                   </div>
+//                   <div className="p-6 space-y-4">
+//                     <h3 className="text-xl font-semibold">{project.title}</h3>
+//                     <p className="text-gray-400">{project.description}</p>
+//                     <div className="flex gap-4 pt-4">
+//                       {project.preview && (
+//                         <a
+//                           href={project.preview}
+//                           target="_blank"
+//                           className="gradient-border bg-gray-900 px-6 py-2 rounded-lg hover:text-white transition-colors"
+//                         >
+//                           Live Preview
+//                         </a>
+//                       )}
+//                       <a
+//                         href={project.github}
+//                         target="_blank"
+//                         className="gradient-border bg-gray-900 px-6 py-2 rounded-lg hover:text-white transition-colors"
+//                       >
+//                         GitHub
+//                       </a>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </section>
+
+//         {/* Original Sections */}
+//         <TechnologiesSection />
+//         <AdditionalSkillsSection />
+//         <EmailForm />
+//       </main>
+
+//       {/* Footer with Animation */}
+//       <footer className="bg-gray-900/50 py-8 border-t border-gray-800">
+//         <div className="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+//           <p className="text-gray-400">© 2024 Hossam Salah. All rights reserved.</p>
+//           <div className="flex gap-6">
+//             {[
+//               { icon: "linkedin", url: "https://www.linkedin.com/in/hossam-salah-1ab717238/" },
+//               { icon: "github", url: "https://github.com/hossam101999" }
+//             ].map((social) => (
+//               <a
+//                 key={social.icon}
+//                 href={social.url}
+//                 className="text-2xl text-gray-400 hover:text-white transition-all hover:scale-125"
+//                 target="_blank"
+//               >
+//                 <i className={`fa-brands fa-${social.icon}`}></i>
+//               </a>
+//             ))}
+//           </div>
+//         </div>
+//       </footer>
+
+//       {/* Enhanced Scroll-to-top Button */}
+//       {scrolling && (
+//         <button
+//           className="fixed block right-[-20px] sm:right-8 bottom-0 w-24 animate-bounceInUp"
+//           onClick={() => {
+//             window.scrollTo(0, 0);
+//           }}
+//         >
+//           <img src={ArrowDown} />
+//         </button>
+//       )}
+//     </div>
+//   );
+// };
+
+// // Project Card Component
+// const ProjectCard = ({
+//   image,
+//   title,
+//   description,
+//   livePreviewLink,
+//   githubLink,
+// }) => {
+//   return (
+//     <div className="border border-gray-500 rounded-md p-5 flex-1 animate-fadeInUp ">
+//       <img src={image} className="w-full h-[30vh] object-cover" />
+//       <h3 className="text-2xl font-semibold mt-8">{title}</h3>
+//       <p className="text-gray-400 text-sm mt-2">
+//         <i>{description}</i>
+//       </p>
+//       <div className="flex justify-between gap-2 mt-12 items-end">
+//         {livePreviewLink && (
+//           <a href={livePreviewLink} className="w-1/2" target="_blank">
+//             <button className="w-full text-sm py-3 bg-gradient-to-t from-blue-500 rounded-full to-cyan-500 hover:from-blue-700 hover:to-cyan-700 text-white animate-bounceInUp">
+//               Live preview
+//             </button>
+//           </a>
+//         )}
+//         {githubLink && (
+//           <a href={githubLink} className="w-1/2" target="_blank">
+//             <button className="w-full text-sm py-3 border rounded-full hover:border-blue-500 hover:text-blue-500 animate-bounceInUp">
+//               Checkout GitHub
+//             </button>
+//           </a>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
